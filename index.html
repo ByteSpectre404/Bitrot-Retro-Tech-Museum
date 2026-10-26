@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Bitrot Museum of Retro Technology // Lobby</title>
+  <meta name="description" content="The Bitrot Museum of Retro Technology: An authentic retro tech archive and exhibition ledger from 1977 to 2000." />
+  <meta property="og:title" content="The Bitrot Museum of Retro Technology" />
+  <meta property="og:description" content="Permanent repository of obsolete silicon, magnetic tape, and forgotten user interfaces." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Self-hosted / Google Webfonts with strict monospace fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Space+Grotesk:wght@700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet" />
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="lobby">
+
+  <!-- ACCESSIBLE SKIP TO CONTENT -->
+  <a href="#main-content" class="skip-link">SKIP TO CONTENT [ALT+S]</a>
+
+  <!-- PERSISTENT HEADER (SHARED COMPONENT) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo Mark + Wordmark -->
+      <a href="index.html" class="brand-anchor" aria-label="The Bitrot Museum Lobby">
+        <div class="logo-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" shape-rendering="crispEdges">
+            <path d="M2 2h12v2H2zm0 3h2v6H2zm10 0h2v6h-2zM2 12h12v2H2zm3-5h6v2H5z" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">THE BITROT MUSEUM</span>
+          <span class="brand-sub">// RETRO TECH ARCHIVE</span>
+        </div>
+      </a>
+
+      <!-- Live Museum UTC Clock -->
+      <div class="museum-time-chip" title="Live System Calibration Time">
+        <span class="time-pulse-dot" aria-hidden="true"></span>
+        <span class="museum-live-time">MUSEUM TIME: 14:02:41 UTC</span>
+      </div>
+
+      <!-- Navigation & Controls -->
+      <div class="header-actions">
+        <nav class="main-nav" aria-label="Primary Museum Navigation">
+          <a href="index.html" class="nav-link active" aria-current="page">01 LOBBY</a>
+          <a href="exhibits.html" class="nav-link">02 EXHIBITS</a>
+          <a href="visit.html" class="nav-link">03 VISIT</a>
+        </nav>
+
+        <!-- Sound Toggle -->
+        <button type="button" class="btn-toggle-sound" aria-pressed="false" title="Toggle 8-Bit Web Audio Feedback">
+          <span class="sound-label">[AUDIO: OFF]</span>
+        </button>
+
+        <!-- Operator Badge -->
+        <div class="logo-badge" style="width: 32px; height: 32px; cursor: default;" title="Operator Terminal Active">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" shape-rendering="crispEdges">
+            <path d="M5 2h6v5H5zm-3 8h12v4H2z" />
+          </svg>
+        </div>
+
+        <!-- Mobile Nav Menu Trigger -->
+        <button type="button" class="btn-mobile-nav" id="btn-mobile-nav-toggle" aria-label="Open Navigation Menu">
+          [MENU ☰]
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION FULLSCREEN OVERLAY -->
+  <aside class="mobile-nav-overlay" id="mobile-nav-overlay" aria-label="Mobile Navigation Drawer">
+    <div class="flex-between">
+      <div class="brand-text">
+        <span class="brand-title" style="color: var(--paper);">THE BITROT MUSEUM</span>
+        <span class="brand-sub" style="color: var(--shade);">// SYSTEM ROUTE SELECTOR</span>
+      </div>
+      <button type="button" class="btn-pixel btn-signal" id="btn-mobile-nav-close">
+        [CLOSE X]
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-item active">01 LOBBY (OVERVIEW)</a>
+      <a href="exhibits.html" class="mobile-nav-item">02 EXHIBITS (9 SPECIMENS)</a>
+      <a href="visit.html" class="mobile-nav-item">03 VISIT (CARTOGRAPHY & PASSES)</a>
+    </nav>
+
+    <div style="border-top: 2px solid var(--paper); padding-top: 16px;">
+      <span class="pixel-label-sm" style="color: var(--shade);">MUSEUM ARCHIVE OPERATIONAL // CONSERVATION DISCIPLINE</span>
+    </div>
+  </aside>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main id="main-content" class="container my-space-lg">
+
+    <!-- KONAMI CODE UNLOCKED TOAST NOTIFICATION -->
+    <div id="konami-toast" style="display:none; position: fixed; bottom: 24px; right: 24px; z-index: 999; background-color: var(--screen); color: var(--phosphor); border: var(--border-thick); box-shadow: var(--shadow-lg); padding: 16px; max-width: 420px; font-family: var(--font-mono);">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+        <span style="width: 8px; height: 8px; background-color: var(--signal); display: inline-block;"></span>
+        <span style="font-family: var(--font-pixel); font-size: 10px; color: var(--signal);">UNLOCKED // OVERRIDE ACCESS</span>
+      </div>
+      <div style="font-family: var(--font-pixel); font-size: 11px; margin-bottom: 4px;">BITROT EXECUTABLE LEVEL 99 ENABLED</div>
+      <p style="font-size: 18px; line-height: 1.3; color: var(--phosphor);">DEBUG_LOG: All magnetic media degaussing halted. Enjoy infinite quarters, archivist.</p>
+    </div>
+
+    <!-- 1. ASYMMETRIC HERO: STATEMENT & CRT BOOT TERMINAL -->
+    <section class="hero-grid" aria-labelledby="hero-heading">
+      <!-- Left (7 Cols): Museum Manifesto -->
+      <div class="hero-statement">
+        <div>
+          <div class="flex-between" style="border-bottom: var(--border-thin); padding-bottom: 8px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="pixel-label-sm" style="background: var(--shade); padding: 2px 6px; border: 1px solid var(--ink);">SECTOR 00-A</span>
+              <span class="pixel-label-sm" style="color: #635E4E;">PRIMARY PERIMETER EXHIBIT</span>
+            </div>
+            <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold;">STATUS: DECAY ACTIVE</span>
+          </div>
+
+          <span class="pixel-label" style="background: var(--ink); color: var(--paper); padding: 3px 8px; display: inline-block; margin-bottom: 8px;">
+            COLLECTION MANIFESTO // 1971-2004
+          </span>
+
+          <h1 id="hero-heading" class="hero-headline">
+            Everything here once felt like the future.
+          </h1>
+
+          <p class="hero-subhead">
+            Permanent repository of obsolete silicon, magnetic tape, and forgotten user interfaces. All artifacts maintained in strictly calibrated, unstable functional states.
+          </p>
+        </div>
+
+        <div>
+          <div class="hero-actions">
+            <a href="exhibits.html" class="btn-pixel btn-signal">
+              <span>ENTER THE GALLERY</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <button type="button" class="btn-pixel btn-shade" id="btn-ping-memory">
+              <span aria-hidden="true">⚡</span>
+              <span>PING HARDWARE MEMORY</span>
+            </button>
+            <div style="margin-left: auto; text-align: right;" class="mono-data">
+              <span style="font-size: 10px; color: #635E4E; display: block;">INDEX DISK</span>
+              <span style="font-weight: bold;">5.25" DSDD FLOPPY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right (5 Cols): Dark CRT Terminal Boot Sequence -->
+      <div class="screen-panel" aria-label="CRT Monitor Emulator">
+        <div class="screen-content">
+          <div class="flex-between" style="border-bottom: 1px solid rgba(92, 255, 138, 0.3); padding-bottom: 6px; margin-bottom: 16px;">
+            <span class="pixel-label-sm" style="color: var(--phosphor);">MONITOR OUTPUT // VT-100 EMULATOR</span>
+            <span style="display: inline-block; width: 6px; height: 6px; background-color: var(--phosphor); animation: pulse-step 1s infinite steps(2);"></span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.4;">
+            <p style="color: rgba(92, 255, 138, 0.7); font-size: 13px;">BITROT CORP. ROM BIOS v3.12 (C) 1984</p>
+            <p style="color: rgba(92, 255, 138, 0.7); font-size: 13px;">ALL RIGHTS RESERVED // INTERRUPT VECTOR TABLE MAP</p>
+
+            <div style="padding: 6px 0; border-top: 1px dashed rgba(92, 255, 138, 0.2); border-bottom: 1px dashed rgba(92, 255, 138, 0.2);">
+              <p id="crt-mem-counter" style="font-weight: bold;">SYSTEM RAM CHECK: 640K OK</p>
+              <p>EXPANSION BUS 08: PRESENT [PARALLEL GPIB]</p>
+              <p>DETECTED: CASSETTE DRIVE 0 (300 BAUD)</p>
+              <p>FLOPPY CONTROLLER: NEC μPD765 ACTIVE</p>
+              <p>PHOSPHOR BURN LEVEL: 14.8% NOMINAL</p>
+            </div>
+
+            <p style="font-weight: bold; color: var(--phosphor);">SYSTEM BOOT SEQUENCE COMPLETE</p>
+            <p style="background: rgba(92, 255, 138, 0.15); display: inline-block; padding: 2px 6px; color: var(--signal); font-weight: bold; width: fit-content;">
+              STATUS: STABLE DECAY
+            </p>
+
+            <div style="margin-top: 8px; font-size: 16px; font-weight: bold;">
+              <span>&gt; WELCOME, VISITOR_0427</span>
+              <span class="blinking-cursor" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="flex-between" style="border-top: 1px solid rgba(92, 255, 138, 0.3); padding-top: 10px; margin-top: 24px; font-size: 11px; color: rgba(92, 255, 138, 0.7);">
+            <span>PARITY: NONE</span>
+            <span>BAUD: 9600</span>
+            <span>FRAME: 8N1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HORIZONTAL TIMELINE STRIP (1977 — 2000) -->
+    <section class="timeline-section" aria-labelledby="timeline-heading">
+      <div class="flex-between mb-space-sm" style="flex-wrap: wrap; gap: 8px;">
+        <div>
+          <span class="pixel-label-sm" style="color: #635E4E;">// ACCESSION REGISTER CHRONOLOGY</span>
+          <h2 id="timeline-heading" style="font-size: 32px;">Temporal Milestones (1977 — 2000)</h2>
+        </div>
+        <div class="pixel-label-sm" style="background: var(--paper); border: var(--border-thin); padding: 4px 8px;">
+          SELECT ANY EPOCH NODE TO INSPECT PLACARD
+        </div>
+      </div>
+
+      <!-- Scrollable Track with Wire and Nodes -->
+      <div class="timeline-track-wrap">
+        <div class="timeline-track">
+          <div class="timeline-wire" aria-hidden="true"></div>
+
+          <!-- 1977 -->
+          <button type="button" class="timeline-node-btn" data-year="1977" onclick="selectTimelineYear('1977')" aria-label="1977: Atari 2600">
+            <span class="node-year">1977</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">ATARI 2600</span>
+          </button>
+
+          <!-- 1979 -->
+          <button type="button" class="timeline-node-btn" data-year="1979" onclick="selectTimelineYear('1979')" aria-label="1979: Sony Walkman TPS-L2">
+            <span class="node-year">1979</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">TPS-L2</span>
+          </button>
+
+          <!-- 1981 -->
+          <button type="button" class="timeline-node-btn" data-year="1981" onclick="selectTimelineYear('1981')" aria-label="1981: IBM PC 5150">
+            <span class="node-year">1981</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">IBM 5150</span>
+          </button>
+
+          <!-- 1982 -->
+          <button type="button" class="timeline-node-btn" data-year="1982" onclick="selectTimelineYear('1982')" aria-label="1982: Commodore 64">
+            <span class="node-year">1982</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">C64</span>
+          </button>
+
+          <!-- 1984 (Default Active) -->
+          <button type="button" class="timeline-node-btn is-active" data-year="1984" onclick="selectTimelineYear('1984')" aria-label="1984: Apple Macintosh 128K">
+            <span class="node-year">1984</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">MAC 128K</span>
+          </button>
+
+          <!-- 1989 -->
+          <button type="button" class="timeline-node-btn" data-year="1989" onclick="selectTimelineYear('1989')" aria-label="1989: Game Boy">
+            <span class="node-year">1989</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">GAME BOY</span>
+          </button>
+
+          <!-- 1996 -->
+          <button type="button" class="timeline-node-btn" data-year="1996" onclick="selectTimelineYear('1996')" aria-label="1996: Tamagotchi">
+            <span class="node-year">1996</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">TAMAGOTCHI</span>
+          </button>
+
+          <!-- 2000 -->
+          <button type="button" class="timeline-node-btn" data-year="2000" onclick="selectTimelineYear('2000')" aria-label="2000: Nokia 3310">
+            <span class="node-year">2000</span>
+            <div class="node-dot"><span class="node-dot-inner"></span></div>
+            <span class="pixel-label-sm">NOKIA 3310</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic Preview Placard -->
+      <article class="placard" id="timeline-dynamic-placard" style="margin-top: 16px;">
+        <div class="placard-header">
+          <span class="placard-accession" id="timeline-p-accession">ACCESSION: RTM-1984-001</span>
+          <span class="placard-tag" id="timeline-p-status">OPERATIONAL / ORIGINAL BIOS</span>
+        </div>
+        <div class="placard-body">
+          <div class="flex-between" style="border-bottom: var(--border-thin); padding-bottom: 6px;">
+            <h3 class="placard-title" id="timeline-p-title">Apple Macintosh 128K (1984)</h3>
+            <span class="pixel-label-sm" id="timeline-p-prov" style="color: #635E4E;">CUPERTINO, CA // MOTOROLA 68000</span>
+          </div>
+          <p class="placard-text" id="timeline-p-text">
+            Brought bitmapped graphical user interface, desktop metaphors, windows, icons, and mouse manipulation into commercial reality. Integrated 9-inch 512×342 monochrome CRT display with zero cooling fans—relying entirely on convection cooling engineered by Steve Jobs' insistence on near-silent operation.
+          </p>
+          <div class="pixel-label-sm" id="timeline-p-specs" style="color: var(--ink); margin-top: 8px;">
+            MEDIA FORMAT: 400KB MFM DISK // CLOCK: 7.8336 MHZ // VOLTAGE: 120V AC
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>HISTORICAL REGISTER AUDITED</span>
+          <a href="exhibits.html" class="pixel-label-sm" style="color: var(--signal); text-decoration: none; font-weight: bold;">[VIEW FULL GALLERY DOSSIER →]</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. OBJECT OF THE WEEK SHOWCASE -->
+    <section class="mb-space-xl" aria-labelledby="ootw-heading">
+      <div class="flex-between" style="border-bottom: var(--border-thick); padding-bottom: 8px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 12px; height: 12px; background-color: var(--signal); display: inline-block;"></span>
+          <span class="pixel-label-md" id="ootw-heading">CURATORIAL HIGHLIGHT // OBJECT OF THE WEEK</span>
+        </div>
+        <span class="pixel-label-sm" style="color: #635E4E;">ROTATION: WEEK 17 / QUARTER 2</span>
+      </div>
+
+      <div class="ootw-grid">
+        <!-- Left: Real Motorola 68000 // 8 MHz Photographic Plate -->
+        <div style="background-color: var(--shade); border: var(--border-thick); box-shadow: var(--shadow-base); padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="flex-between" style="border-bottom: var(--border-thin); padding-bottom: 6px;">
+            <span class="pixel-label-sm">PLATE NO. 042</span>
+            <span class="pixel-label-sm" style="background: var(--ink); color: #fff; padding: 2px 6px;">SILICON SPECIMEN</span>
+          </div>
+
+          <!-- Archival Photo Container for Motorola 68000 // 8 MHz -->
+          <div class="archival-photo-frame" style="margin: 16px 0; padding: 12px; background-color: #F8F4E8;">
+            <div class="archival-photo-container" style="height: 220px; background-color: #FFFFFF;">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Motorola_MC68000P8_02.jpg" alt="Authentic Motorola MC68000P8 8MHz 16/32-bit microprocessor (64-pin DIP)" style="max-height: 200px; width: auto; object-fit: contain;" loading="lazy" />
+            </div>
+
+            <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 6px; margin-top: 8px; color: #635E4E;">
+              <span style="font-weight: bold; color: var(--ink);">MOTOROLA 68000 // 8 MHZ</span>
+              <span>64-PIN DIP // 3.5μm HMOS</span>
+            </div>
+          </div>
+
+          <div class="flex-between pixel-label-sm" style="border-top: var(--border-thin); padding-top: 6px; color: #635E4E;">
+            <span>CLOCK: 8.000 MHZ</span>
+            <span>RESTORED / VERIFIED</span>
+          </div>
+        </div>
+
+        <!-- Right: Comprehensive Museum Wall Placard -->
+        <article class="placard" style="box-shadow: var(--shadow-base);">
+          <div class="placard-header">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="width: 8px; height: 8px; background-color: var(--ink); display: inline-block;"></span>
+              <span class="pixel-label-sm">OFFICIAL REGISTRATION PLACARD</span>
+            </div>
+            <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold;">CONSERVATION: STABLE VINTAGE</span>
+          </div>
+
+          <div class="placard-body" style="gap: 16px;">
+            <div>
+              <span class="pixel-label-sm" style="color: #635E4E;">SPECIMEN RECORD IDENTIFIER</span>
+              <h3 style="font-size: 34px; line-height: 1.1; margin-top: 4px;">ACCESSION NO: RTM-1984-001</h3>
+            </div>
+
+            <!-- Metadata Table -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border-top: var(--border-thin); border-bottom: var(--border-thin); padding: 12px 0;">
+              <div>
+                <span class="pixel-label-sm" style="color: #635E4E; display: block;">OBJECT CLASSIFICATION:</span>
+                <strong style="font-family: var(--font-pixel); font-size: 11px;">Apple Macintosh 128K</strong>
+              </div>
+              <div>
+                <span class="pixel-label-sm" style="color: #635E4E; display: block;">PROVENANCE / ORIGIN:</span>
+                <strong style="font-family: var(--font-pixel); font-size: 11px;">Cupertino, CA (1984)</strong>
+              </div>
+              <div>
+                <span class="pixel-label-sm" style="color: #635E4E; display: block;">SERIAL ACCESSION:</span>
+                <span class="mono-data">F4200NUM0001 (DEPT 12)</span>
+              </div>
+              <div>
+                <span class="pixel-label-sm" style="color: #635E4E; display: block;">PROCESSOR & ENGINE:</span>
+                <span class="mono-data">MOTOROLA 68000 // 8 MHZ</span>
+              </div>
+            </div>
+
+            <!-- Curator Field Note -->
+            <div>
+              <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold;">// CURATOR'S FIELD NOTE</span>
+              <p style="font-size: 21px; font-style: italic; border-left: 4px solid var(--ink); padding-left: 16px; margin-top: 6px; background: var(--shade); padding: 12px 16px;">
+                "Shipped with 128 KB of non-expandable RAM. The internal chassis features cast signatures of the development team—monuments to a future that lasted six months before the 512K upgrade was required. Despite severe thermal stress and lack of dynamic audio synthesis, the Macintosh established the desktop metaphor as an irreversible paradigm."
+              </p>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex-between" style="flex-wrap: wrap; gap: 12px; border-top: var(--border-thin); padding-top: 16px;">
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a href="exhibits.html" class="btn-pixel btn-signal">INSPECT SPECIMEN #06</a>
+                <button type="button" class="btn-pixel btn-shade" id="btn-drive-sound">
+                  <span>🔊</span> DRIVE SPIN SOUND
+                </button>
+              </div>
+              <span class="pixel-label-sm" style="color: #635E4E;">GALLERY 02 // BAY 14</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. ARCADE HIGH-SCORE TABLE STATS ROW -->
+    <section class="mb-space-xl" aria-labelledby="stats-heading">
+      <div class="flex-between" style="border-bottom: var(--border-thin); padding-bottom: 8px; margin-bottom: 16px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 10px; height: 10px; background-color: var(--ink); display: inline-block;"></span>
+          <h2 id="stats-heading" style="font-size: 28px;">RECORDS // ARCHIVE METRICS</h2>
+        </div>
+        <span class="pixel-label-sm" style="color: #635E4E;">CABINET MODE: LEADERBOARD HIGHSCORES</span>
+      </div>
+
+      <div class="stats-table-row">
+        <!-- Rank 01 -->
+        <div class="stat-score-card">
+          <div class="stat-score-header">
+            <span class="pixel-label-sm" style="background: var(--signal); color: #fff; padding: 2px 6px;">RANK 01</span>
+            <span class="pixel-label-sm" style="color: #635E4E;">PTS: 999,900</span>
+          </div>
+          <div>
+            <span class="pixel-label-sm" style="color: #635E4E; display: block; margin-top: 8px;">TOTAL ARTIFACTS IN VAULT</span>
+            <div class="stat-score-val">1,428</div>
+            <span style="font-size: 18px; font-weight: bold;">UNITS REGISTERED</span>
+          </div>
+          <div class="flex-between pixel-label-sm" style="border-top: 1px solid var(--ink); padding-top: 6px; margin-top: 12px; color: #635E4E;">
+            <span>INTEGRITY: HIGH</span>
+            <span>+12 THIS MO</span>
+          </div>
+        </div>
+
+        <!-- Rank 02 -->
+        <div class="stat-score-card">
+          <div class="stat-score-header">
+            <span class="pixel-label-sm" style="background: var(--ink); color: #fff; padding: 2px 6px;">RANK 02</span>
+            <span class="pixel-label-sm" style="color: #635E4E;">PTS: 850,200</span>
+          </div>
+          <div>
+            <span class="pixel-label-sm" style="color: #635E4E; display: block; margin-top: 8px;">TEMPORAL COVERAGE SPAN</span>
+            <div class="stat-score-val">1971–2004</div>
+            <span style="font-size: 18px; font-weight: bold;">33 YEARS OBSOLESCENCE</span>
+          </div>
+          <div class="flex-between pixel-label-sm" style="border-top: 1px solid var(--ink); padding-top: 6px; margin-top: 12px; color: #635E4E;">
+            <span>EPOCH: SILICON 1.0</span>
+            <span>2,048 ICs</span>
+          </div>
+        </div>
+
+        <!-- Rank 03 -->
+        <div class="stat-score-card">
+          <div class="stat-score-header">
+            <span class="pixel-label-sm" style="background: var(--ink); color: #fff; padding: 2px 6px;">RANK 03</span>
+            <span class="pixel-label-sm" style="color: #635E4E;">PTS: 742,000</span>
+          </div>
+          <div>
+            <span class="pixel-label-sm" style="color: #635E4E; display: block; margin-top: 8px;">BITROT RESISTANCE RATING</span>
+            <div class="stat-score-val">94.2%</div>
+            <span style="font-size: 18px; font-weight: bold;">MAGNETIC STABILITY</span>
+          </div>
+          <div class="flex-between pixel-label-sm" style="border-top: 1px solid var(--ink); padding-top: 6px; margin-top: 12px; color: #635E4E;">
+            <span>NITROGEN STORAGE</span>
+            <span>STABLE</span>
+          </div>
+        </div>
+
+        <!-- Rank 04 (Live LocalStorage Visitor Counter) -->
+        <div class="stat-score-card" style="border-color: var(--signal);">
+          <div class="stat-score-header">
+            <span class="pixel-label-sm" style="background: var(--signal); color: #fff; padding: 2px 6px;">RANK 04</span>
+            <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold;">LIVE TALLY</span>
+          </div>
+          <div>
+            <span class="pixel-label-sm" style="color: #635E4E; display: block; margin-top: 8px;">VISITORS LOGGED TODAY</span>
+            <div class="stat-score-val" id="visitor-tally-num" style="color: var(--signal);">427</div>
+            <span style="font-size: 18px; font-weight: bold;">ARCHIVAL BADGES ISSUED</span>
+          </div>
+          <div class="flex-between pixel-label-sm" style="border-top: 1px solid var(--ink); padding-top: 6px; margin-top: 12px;">
+            <button type="button" id="btn-bump-visitor" class="pixel-label-sm" style="background: none; border: none; text-decoration: underline; cursor: pointer; color: var(--ink); font-weight: bold;">
+              + LOG MY PASS
+            </button>
+            <span style="font-size: 8px; color: #635E4E;">ID: 0427-BIT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EASTER EGG KEYBOARD HINT FOOTER STRIP -->
+    <section style="background-color: var(--shade); border: var(--border-thin); padding: 12px 16px; margin-bottom: 32px;" class="flex-between">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="pixel-label-sm" style="color: var(--ink);">COMMAND PROTOCOL:</span>
+        <span class="pixel-label-sm" style="color: #635E4E;">TYPE STANDARD 1986 GAME CHEAT CODE ON KEYBOARD FOR EMERGENCY DIAGNOSTICS</span>
+      </div>
+      <span class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 2px 6px; font-weight: bold;">
+        ↑ ↑ ↓ ↓ ← → ← → B A
+      </span>
+    </section>
+
+  </main>
+
+  <!-- REUSABLE ARCHIVAL FOOTER (SHARED COMPONENT) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-hours-block">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 8px; height: 8px; background-color: var(--ink); display: inline-block;"></span>
+          <span class="pixel-label-md">OPERATING PROTOCOL</span>
+        </div>
+        <p class="mono-data" style="margin-top: 4px; font-weight: bold;">
+          TUE-SUN 10:00-18:00 // CLOSED ON MONDAYS FOR DEGAUSSING
+        </p>
+      </div>
+
+      <div class="footer-stamp">
+        <span class="pixel-label-sm" style="color: #635E4E; display: block;">CATALOGUE SEAL</span>
+        <span class="pixel-label-md" style="font-weight: bold;">ACCESSION: RTM-2025-ARCHIVE</span>
+      </div>
+
+      <div>
+        <p class="footer-quote">
+          "Please do not press the buttons. Please press the buttons."
+        </p>
+        <span class="pixel-label-sm" style="color: #635E4E; display: block; text-align: right; margin-top: 4px;">
+          CONSERVATION DISCIPLINE // LEVEL 0 CRITICAL
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MASTER SCRIPT -->
+  <script src="main.js" defer></script>
+</body>
+</html>

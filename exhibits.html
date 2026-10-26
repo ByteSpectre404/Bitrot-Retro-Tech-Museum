@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Bitrot Museum // Exhibits & Accession Ledger</title>
+  <meta name="description" content="Catalogue register and permanent archive of retro technology specimens from 1977 to 2000." />
+  <meta property="og:title" content="The Bitrot Museum // Exhibits & Accession Ledger" />
+  <meta property="og:description" content="Catalogue register and permanent archive of retro technology specimens from 1977 to 2000." />
+  <meta property="og:type" content="website" />
+
+  <!-- Self-hosted / Google Webfonts with strict monospace fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=Space+Grotesk:wght@700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet" />
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="exhibits">
+
+  <!-- ACCESSIBLE SKIP TO CONTENT -->
+  <a href="#main-content" class="skip-link">SKIP TO CONTENT [ALT+S]</a>
+
+  <!-- PERSISTENT HEADER (SHARED COMPONENT) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo Mark + Wordmark -->
+      <a href="index.html" class="brand-anchor" aria-label="The Bitrot Museum Lobby">
+        <div class="logo-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" shape-rendering="crispEdges">
+            <path d="M2 2h12v2H2zm0 3h2v6H2zm10 0h2v6h-2zM2 12h12v2H2zm3-5h6v2H5z" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">THE BITROT MUSEUM</span>
+          <span class="brand-sub">// RETRO TECH ARCHIVE</span>
+        </div>
+      </a>
+
+      <!-- Live Museum UTC Clock -->
+      <div class="museum-time-chip" title="Live System Calibration Time">
+        <span class="time-pulse-dot" aria-hidden="true"></span>
+        <span class="museum-live-time">MUSEUM TIME: 14:02:41 UTC</span>
+      </div>
+
+      <!-- Navigation & Controls -->
+      <div class="header-actions">
+        <nav class="main-nav" aria-label="Primary Museum Navigation">
+          <a href="index.html" class="nav-link">01 LOBBY</a>
+          <a href="exhibits.html" class="nav-link active" aria-current="page">02 EXHIBITS</a>
+          <a href="visit.html" class="nav-link">03 VISIT</a>
+        </nav>
+
+        <!-- Sound Toggle -->
+        <button type="button" class="btn-toggle-sound" aria-pressed="false" title="Toggle 8-Bit Web Audio Feedback">
+          <span class="sound-label">[AUDIO: OFF]</span>
+        </button>
+
+        <!-- Operator Badge -->
+        <div class="logo-badge" style="width: 32px; height: 32px; cursor: default;" title="Operator Terminal Active">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" shape-rendering="crispEdges">
+            <path d="M5 2h6v5H5zm-3 8h12v4H2z" />
+          </svg>
+        </div>
+
+        <!-- Mobile Nav Menu Trigger -->
+        <button type="button" class="btn-mobile-nav" id="btn-mobile-nav-toggle" aria-label="Open Navigation Menu">
+          [MENU ☰]
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION FULLSCREEN OVERLAY -->
+  <aside class="mobile-nav-overlay" id="mobile-nav-overlay" aria-label="Mobile Navigation Drawer">
+    <div class="flex-between">
+      <div class="brand-text">
+        <span class="brand-title" style="color: var(--paper);">THE BITROT MUSEUM</span>
+        <span class="brand-sub" style="color: var(--shade);">// SYSTEM ROUTE SELECTOR</span>
+      </div>
+      <button type="button" class="btn-pixel btn-signal" id="btn-mobile-nav-close">
+        [CLOSE X]
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-item">01 LOBBY (OVERVIEW)</a>
+      <a href="exhibits.html" class="mobile-nav-item active">02 EXHIBITS (9 SPECIMENS)</a>
+      <a href="visit.html" class="mobile-nav-item">03 VISIT (CARTOGRAPHY & PASSES)</a>
+    </nav>
+
+    <div style="border-top: 2px solid var(--paper); padding-top: 16px;">
+      <span class="pixel-label-sm" style="color: var(--shade);">MUSEUM ARCHIVE OPERATIONAL // CONSERVATION DISCIPLINE</span>
+    </div>
+  </aside>
+
+  <!-- MAIN GALLERY CONTENT -->
+  <main id="main-content" class="container my-space-lg">
+
+    <!-- 1. CATALOGUE REGISTER HEADER BAR -->
+    <section style="background-color: var(--shade); border: var(--border-thick); box-shadow: var(--shadow-base); padding: 24px; margin-bottom: 24px;" aria-labelledby="gallery-title">
+      <div class="flex-between" style="border-bottom: var(--border-thin); padding-bottom: 8px; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 10px; height: 10px; background-color: var(--signal); display: inline-block;"></span>
+          <span class="pixel-label-sm">CATALOGUE REGISTER // ARCHIVE SECTION B</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; background: var(--paper); border: var(--border-thin); padding: 4px 8px;">
+          <span style="width: 6px; height: 6px; background-color: var(--phosphor); border: 1px solid var(--ink); display: inline-block;"></span>
+          <span class="pixel-label-sm">ALL 9 SPECIMENS OPERATIONAL</span>
+        </div>
+      </div>
+
+      <div class="flex-between" style="flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+        <div>
+          <h1 id="gallery-title" style="font-size: 42px; line-height: 1.05;">EXHIBITS & ACCESSION LEDGER</h1>
+          <p style="font-size: 21px; margin-top: 4px; color: #38354A;">
+            SHOWING <strong id="specimen-matched-count" style="color: var(--ink);">9</strong> OF 9 VAULT SPECIMENS // PERMANENT ARCHIVE // Calibration cycle 2025.4 // <span style="color: var(--signal); font-weight: bold;">STATUS: STABLE</span>
+          </p>
+        </div>
+
+        <div style="background-color: var(--paper); border: var(--border-thin); padding: 8px 12px; display: flex; align-items: center; gap: 10px; box-shadow: var(--shadow-sm);">
+          <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" shape-rendering="crispEdges">
+            <path d="M1 1h14v2H1V1zm0 4h2v8H1V5zm12 0h2v8h-2V5zm-8 1h4v6H5V6zm2 2h0z" />
+          </svg>
+          <div>
+            <span class="pixel-label-sm" style="color: #635E4E; display: block;">CHAMBER ATMOSPHERE</span>
+            <span class="mono-data" style="font-weight: bold;">19.2°C / 38% RH // INERT NITROGEN</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. CHUNKY FILTER & TERMINAL SEARCH BAR -->
+    <section class="filter-bar" aria-label="Specimen Filter and Search Controls">
+      <!-- Filter Buttons -->
+      <div class="filter-button-group" role="toolbar" aria-label="Filter exhibits by decade or hardware category">
+        <button type="button" class="filter-toggle-btn is-active" data-filter="all" aria-pressed="true">ALL (9)</button>
+        <button type="button" class="filter-toggle-btn" data-filter="70s" aria-pressed="false">70s (2)</button>
+        <button type="button" class="filter-toggle-btn" data-filter="80s" aria-pressed="false">80s (4)</button>
+        <button type="button" class="filter-toggle-btn" data-filter="90s" aria-pressed="false">90s (2)</button>
+        <button type="button" class="filter-toggle-btn" data-filter="00s" aria-pressed="false">00s (1)</button>
+        <span style="display: inline-block; width: 2px; height: 24px; background-color: var(--ink); margin: 0 4px;" aria-hidden="true"></span>
+        <button type="button" class="filter-toggle-btn" data-filter="handheld" aria-pressed="false">HANDHELD (2)</button>
+        <button type="button" class="filter-toggle-btn" data-filter="computing" aria-pressed="false">COMPUTING (4)</button>
+        <button type="button" class="filter-toggle-btn" data-filter="audio" aria-pressed="false">AUDIO (1)</button>
+      </div>
+
+      <!-- Terminal Prompt Search -->
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div class="terminal-search-box">
+          <label for="terminal-search" class="terminal-prompt-prefix">C:\&gt; SEARCH_OBJECT_</label>
+          <input type="text" id="terminal-search" class="terminal-search-input" placeholder="" autocomplete="off" spellcheck="false" />
+          <span class="blinking-cursor" style="width: 8px; height: 14px;" aria-hidden="true"></span>
+          <button type="button" id="clear-search-btn" class="pixel-label-sm" style="display: none; background: none; border: none; color: var(--phosphor); cursor: pointer;" title="Clear Search Query">[CLR]</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- NO RESULTS NOTICE -->
+    <div id="no-results-panel" style="display:none; background-color: var(--paper); border: var(--border-thick); box-shadow: var(--shadow-base); padding: 48px 24px; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin-bottom: 32px;">
+      <h2 style="font-size: 28px; margin-bottom: 8px;">NO SPECIMENS LOCATED IN ARCHIVE</h2>
+      <p style="font-size: 20px; color: #635E4E; max-width: 480px; margin-bottom: 16px;">The requested query produced 0 sector matches. Check sector indexing or reset filters.</p>
+      <button type="button" class="btn-pixel btn-signal" onclick="document.querySelector('[data-filter=all]').click(); document.getElementById('terminal-search').value='';">RESET FILTERS</button>
+    </div>
+
+    <!-- 3. ASYMMETRIC 12-COLUMN GALLERY MASONRY GRID -->
+    <div class="gallery-12-grid" id="gallery-grid" aria-label="Archive Specimens Grid">
+
+      <!-- SPECIMEN #01: ATARI 2600 VCS (7 COLS) -->
+      <article class="placard specimen-card col-span-7" data-category="computing" data-decade="70s" data-object-id="atari2600" data-open-modal="atari2600" onclick="openSpecimenModal('atari2600')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Atari 2600 VCS">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1977-001</span>
+          <span class="placard-tag">[COMPUTING / 70s]</span>
+        </div>
+        <div class="placard-body">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center;">
+            <div class="archival-photo-frame">
+              <div class="archival-photo-container">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Atari-2600-Wood-4Sw-Set.jpg" alt="Atari 2600 VCS four-switch woodgrain console with CX40 joystick" loading="lazy" />
+              </div>
+              <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+                <span>SPECIMEN #01: ATARI 2600 VCS</span>
+                <span>SUNNYVALE, CA</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="placard-title">ATARI 2600 VCS</h3>
+              <span class="pixel-label-sm" style="color: #635E4E;">DEBUT: 1977 // ROM CARTRIDGE SYSTEM</span>
+              <p class="placard-text" style="margin-top: 6px;">
+                Popularized microprocessor-based hardware and swappable cartridge ROMs. Solid faux woodgrain fascia with metal toggle switches and CX40 joystick.
+              </p>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; font-family: var(--font-mono); border: var(--border-thin); background: var(--paper);">
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">PROCESSOR:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">MOS 6507 @ 1.19 MHz</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">BASE RAM:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">128 BYTES (RIOT 6532)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; color: #635E4E;">VIDEO / AUDIO:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">TIA (TELEVISION INTERFACE)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>PHYSICAL CONDITION: MINT (RESTORED)</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="atari2600" onclick="event.stopPropagation(); openSpecimenModal('atari2600')">[INSPECT REGISTER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #02: SONY WALKMAN TPS-L2 (5 COLS) -->
+      <article class="placard specimen-card col-span-5" data-category="audio" data-decade="70s" data-object-id="walkman" data-open-modal="walkman" onclick="openSpecimenModal('walkman')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Sony Walkman TPS-L2">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1979-004</span>
+          <span class="placard-tag">[AUDIO / 70s]</span>
+        </div>
+        <div class="placard-body">
+          <div class="archival-photo-frame">
+            <div class="archival-photo-container">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Walkman_TPS-L2.jpg" alt="Sony Walkman TPS-L2 portable stereo cassette player with dual 3.5mm jacks" loading="lazy" />
+            </div>
+            <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+              <span>SPECIMEN #02: SONY STEREO</span>
+              <span>TOKYO, JAPAN</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="placard-title">SONY WALKMAN TPS-L2</h3>
+            <p class="placard-text">
+              The device that privatized personal acoustic space. Featuring dual mini stereo 3.5mm jacks, iconic Hot Line orange mic toggle, and stereo cassette playback.
+            </p>
+            <div style="background: var(--paper); border: var(--border-thin); padding: 6px 8px; margin-top: 8px;" class="mono-data">
+              <div class="flex-between" style="border-bottom: 1px solid var(--ink); padding-bottom: 2px;">
+                <span style="color: #635E4E;">MECHANISM:</span>
+                <span style="font-weight: bold;">DUAL MINI JACKS / STEREO</span>
+              </div>
+              <div class="flex-between" style="padding-top: 2px;">
+                <span style="color: #635E4E;">HOT LINE BUTTON:</span>
+                <span style="font-weight: bold; color: var(--signal);">ORANGE AMBIENT OVERRIDE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>SERVO CALIBRATED</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="walkman" onclick="event.stopPropagation(); openSpecimenModal('walkman')">[DOSSIER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #03: IBM PC 5150 (5 COLS) -->
+      <article class="placard specimen-card col-span-5" data-category="computing" data-decade="80s" data-object-id="ibmpc" data-open-modal="ibmpc" onclick="openSpecimenModal('ibmpc')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for IBM PC 5150">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1981-008</span>
+          <span class="placard-tag">[COMPUTING / 80s]</span>
+        </div>
+        <div class="placard-body">
+          <div class="archival-photo-frame">
+            <div class="archival-photo-container">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/IBM_PC_5150.jpg" alt="IBM Personal Computer 5150 with 5151 green phosphor monitor and buckling spring keyboard" loading="lazy" />
+            </div>
+            <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+              <span>SPECIMEN #03: IBM PC 5150</span>
+              <span>BOCA RATON, FL</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="placard-title">IBM PERSONAL COMPUTER 5150</h3>
+            <p class="placard-text">
+              The watershed platform that established open architecture standards in business. Launched with PC-DOS 1.0 and mechanical buckling-spring keyboard.
+            </p>
+            <div style="background: var(--paper); border: var(--border-thin); padding: 6px 8px; margin-top: 8px;" class="mono-data">
+              <div class="flex-between" style="border-bottom: 1px solid var(--ink); padding-bottom: 2px;">
+                <span style="color: #635E4E;">CPU & RAM:</span>
+                <span style="font-weight: bold;">INTEL 8088 / 16KB-640KB</span>
+              </div>
+              <div class="flex-between" style="padding-top: 2px;">
+                <span style="color: #635E4E;">STORAGE:</span>
+                <span style="font-weight: bold;">DUAL 5.25" FLOPPY DRIVES</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>BIOS INTEGRITY: VERIFIED</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="ibmpc" onclick="event.stopPropagation(); openSpecimenModal('ibmpc')">[DOSSIER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #04: COMMODORE 64 (7 COLS - FEATURED RECORD) -->
+      <article class="placard specimen-card col-span-7" data-category="computing" data-decade="80s" data-object-id="c64" data-open-modal="c64" onclick="openSpecimenModal('c64')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Commodore 64" style="position: relative;">
+        <div style="position: absolute; top: -12px; right: 16px; background-color: var(--signal); color: #ffffff; padding: 2px 8px; border: var(--border-thin); font-family: var(--font-pixel); font-size: 8px; font-weight: bold; box-shadow: var(--shadow-sm); pointer-events: none;">
+          ★ FEATURED RECORD
+        </div>
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1982-012</span>
+          <span class="placard-tag">[COMPUTING / 80s]</span>
+        </div>
+        <div class="placard-body">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center;">
+            <div class="archival-photo-frame">
+              <div class="archival-photo-container">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Commodore-64-Computer-FL.jpg" alt="Commodore 64 breadbin microcomputer with mechanical keyboard" loading="lazy" />
+              </div>
+              <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+                <span>SPECIMEN #04: COMMODORE 64</span>
+                <span>WEST CHESTER, PA</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="placard-title">COMMODORE 64</h3>
+              <span class="pixel-label-sm" style="color: #635E4E;">DEBUT: 1982 // MOS 6510 @ 1.023 MHZ</span>
+              <p class="placard-text" style="margin-top: 6px;">
+                The quintessential 8-bit microcomputer that defined demographic gaming and bedroom synth hacking. Integrated SID 6581 audio synthesized polyphony unprecedented in consumer hardware.
+              </p>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; font-family: var(--font-mono); border: var(--border-thin); background: var(--paper);">
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">SOUND SYNTH:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">SID 6581 (3-VOICE ANALOG)</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">GRAPHICS:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">VIC-II (16 COLORS, 8 SPRITES)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; color: #635E4E;">SALES RECORD:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold; color: var(--signal);">17 MILLION UNITS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>ACTIVE DOSSIER MOUNTED IN VAULT</span>
+          <button type="button" class="btn-pixel btn-signal pixel-label-sm" style="padding: 4px 10px;" data-open-modal="c64" onclick="event.stopPropagation(); openSpecimenModal('c64')">[OPEN FULL DOSSIER →]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #05: SONY 3.5" MICROFLOPPY DISKETTE (4 COLS) -->
+      <article class="placard specimen-card col-span-4" data-category="computing" data-decade="80s" data-object-id="floppy" data-open-modal="floppy" onclick="openSpecimenModal('floppy')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Sony 3.5 inch Microfloppy Diskette">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1983-002</span>
+          <span class="placard-tag">[MEDIA / 80s]</span>
+        </div>
+        <div class="placard-body">
+          <div class="archival-photo-frame">
+            <div class="archival-photo-container">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Floppy_disk_2009_G1.jpg" alt="Sony 3.5-inch microfloppy diskette with stamped aluminum protective shutter" loading="lazy" />
+            </div>
+            <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+              <span>MFD-2DD SONY CORP</span>
+              <span>TOKYO, JAPAN</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="placard-title">SONY 3.5" MICROFLOPPY DISKETTE</h3>
+            <p class="placard-text">
+              Rigid plastic shell protecting ferric magnetic substrate with auto-sliding metal shutter and mechanical write-protect notch.
+            </p>
+            <div style="background: var(--paper); border: var(--border-thin); padding: 6px 8px; margin-top: 8px;" class="mono-data">
+              <div class="flex-between" style="border-bottom: 1px solid var(--ink); padding-bottom: 2px;">
+                <span style="color: #635E4E;">CAPACITY:</span>
+                <span style="font-weight: bold;">720KB / 1.44MB MFM</span>
+              </div>
+              <div class="flex-between" style="padding-top: 2px;">
+                <span style="color: #635E4E;">ROTATION:</span>
+                <span style="font-weight: bold;">300 RPM DIRECT DRIVE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>WRITE-PROTECTED</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="floppy" onclick="event.stopPropagation(); openSpecimenModal('floppy')">[DOSSIER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #06: APPLE MACINTOSH 128K (8 COLS) -->
+      <article class="placard specimen-card col-span-8" data-category="computing" data-decade="80s" data-object-id="mac128k" data-open-modal="mac128k" onclick="openSpecimenModal('mac128k')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Apple Macintosh 128K">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1984-001</span>
+          <span class="placard-tag">[COMPUTING / 80s]</span>
+        </div>
+        <div class="placard-body">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center;">
+            <div class="archival-photo-frame">
+              <div class="archival-photo-container">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Macintosh_128k_transparency.png" alt="Apple Macintosh 128K computer with 9-inch monochrome CRT and 400KB floppy slot" loading="lazy" />
+              </div>
+              <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+                <span>SPECIMEN #06: MACINTOSH 128K</span>
+                <span>CUPERTINO, CA</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="placard-title">APPLE MACINTOSH 128K</h3>
+              <span class="pixel-label-sm" style="color: #635E4E;">DEBUT: JAN 24, 1984 // MOTOROLA 68000</span>
+              <p class="placard-text" style="margin-top: 6px;">
+                Brought bitmapped graphical user interface, desktop metaphors, windows, icons, and mouse manipulation into commercial reality. Internal chassis signed with molded relief signatures of the design team.
+              </p>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; font-family: var(--font-mono); border: var(--border-thin); background: var(--paper);">
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">CPU & ARCHITECTURE:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">MC68000 @ 7.83 MHZ</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">RAM & ROM:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">128KB DRAM / 64KB ROM</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; color: #635E4E;">INTERNAL DISPLAY:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">9-INCH 1-BIT MONOCHROME CRT</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>CRT RE-CAPPED // DEGAUSSED WEEKLY</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="mac128k" onclick="event.stopPropagation(); openSpecimenModal('mac128k')">[INSPECT REGISTER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #07: NINTENDO GAME BOY DMG-01 (4 COLS) -->
+      <article class="placard specimen-card col-span-4" data-category="handheld" data-decade="80s" data-object-id="gameboy" data-open-modal="gameboy" onclick="openSpecimenModal('gameboy')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Nintendo Game Boy DMG-01">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1989-009</span>
+          <span class="placard-tag">[HANDHELD / 80s]</span>
+        </div>
+        <div class="placard-body">
+          <div class="archival-photo-frame">
+            <div class="archival-photo-container">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Game-Boy-Original.jpg" alt="Original Nintendo Game Boy DMG-01 with reflective 4-shade LCD screen" loading="lazy" />
+            </div>
+            <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+              <span>GUNPEI YOKOI DESIGN</span>
+              <span>KYOTO, JAPAN</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="placard-title">NINTENDO GAME BOY (DMG-01)</h3>
+            <p class="placard-text">
+              Engineering triumph of battery efficiency over color screens. Features Sharp SM83 8-bit core, 160x144 4-shade reflective LCD, and stereo headphone jack.
+            </p>
+            <div style="background: var(--paper); border: var(--border-thin); padding: 6px 8px; margin-top: 8px;" class="mono-data">
+              <div class="flex-between" style="border-bottom: 1px solid var(--ink); padding-bottom: 2px;">
+                <span style="color: #635E4E;">CPU:</span>
+                <span style="font-weight: bold;">SHARP SM83 @ 4.19 MHZ</span>
+              </div>
+              <div class="flex-between" style="padding-top: 2px;">
+                <span style="color: #635E4E;">DISPLAY:</span>
+                <span style="font-weight: bold;">160x144 4-SHADE REFLECTIVE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>30H PLAYTIME ON 4x AA</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="gameboy" onclick="event.stopPropagation(); openSpecimenModal('gameboy')">[DOSSIER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #08: BANDAI TAMAGOTCHI (4 COLS) -->
+      <article class="placard specimen-card col-span-4" data-category="handheld" data-decade="90s" data-object-id="tamagotchi" data-open-modal="tamagotchi" onclick="openSpecimenModal('tamagotchi')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Bandai Tamagotchi">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-1996-003</span>
+          <span class="placard-tag">[HANDHELD / 90s]</span>
+        </div>
+        <div class="placard-body">
+          <div class="archival-photo-frame">
+            <div class="archival-photo-container">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tamagotchis.jpg" alt="Authentic first-generation Bandai Tamagotchi keychains with dot-matrix LCDs" loading="lazy" />
+            </div>
+            <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+              <span>BANDAI CO., LTD</span>
+              <span>TOKYO, 1996</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="placard-title">BANDAI TAMAGOTCHI</h3>
+            <p class="placard-text">
+              Pioneering virtual pet simulation triggering global cultural obsession. Introduced synthetic companion emotional attachment via interrupt timers.
+            </p>
+            <div style="background: var(--paper); border: var(--border-thin); padding: 6px 8px; margin-top: 8px;" class="mono-data">
+              <div class="flex-between" style="border-bottom: 1px solid var(--ink); padding-bottom: 2px;">
+                <span style="color: #635E4E;">SCREEN MATRIX:</span>
+                <span style="font-weight: bold;">32 x 16 DOT MATRIX LCD</span>
+              </div>
+              <div class="flex-between" style="padding-top: 2px;">
+                <span style="color: #635E4E;">AUDIO:</span>
+                <span style="font-weight: bold;">PIEZOELECTRIC BUZZER</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>BATTERY: CR2032 COIN CELL</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="tamagotchi" onclick="event.stopPropagation(); openSpecimenModal('tamagotchi')">[DOSSIER]</button>
+        </div>
+      </article>
+
+      <!-- SPECIMEN #09: NOKIA 3310 (8 COLS) -->
+      <article class="placard specimen-card col-span-8" data-category="handheld" data-decade="00s" data-object-id="nokia3310" data-open-modal="nokia3310" onclick="openSpecimenModal('nokia3310')" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Inspect dossier for Nokia 3310 Cellular Transceiver">
+        <div class="placard-header">
+          <span class="placard-accession">ACCESSION: RTM-2000-001</span>
+          <span class="placard-tag">[MOBILE / 00s]</span>
+        </div>
+        <div class="placard-body">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center;">
+            <div class="archival-photo-frame">
+              <div class="archival-photo-container">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nokia-3310.png" alt="Classic blue Nokia 3310 mobile phone with monochrome display" loading="lazy" />
+              </div>
+              <div class="flex-between pixel-label-sm" style="width: 100%; border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px; color: #635E4E;">
+                <span>ESPOO, FINLAND</span>
+                <span>INTERNAL ANTENNA</span>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="placard-title">NOKIA 3310 CELLULAR TRANSCEIVER</h3>
+              <span class="pixel-label-sm" style="color: #635E4E;">DEBUT: SEPT 1, 2000 // GSM 900 / 1800</span>
+              <p class="placard-text" style="margin-top: 6px;">
+                Legendary indestructible cellular benchmark. Features user-swappable Xpress-on faceplates, threaded SMS concatenated messaging, 84x48 monochrome green LED, and embedded Snake II ROM.
+              </p>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; font-family: var(--font-mono); border: var(--border-thin); background: var(--paper);">
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">NETWORK STANDARD:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">GSM 900/1800 MHZ PHASE 2+</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--ink);">
+                    <td style="padding: 4px 8px; color: #635E4E;">DISPLAY:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">84x48 MONOCHROME GREEN LED</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 8px; color: #635E4E;">STANDBY ENDURANCE:</td>
+                    <td style="padding: 4px 8px; text-align: right; font-weight: bold;">260 HOURS (BMC-3 NIMH)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="placard-footer">
+          <span>STRUCTURAL INTEGRITY: INDESTRUCTIBLE</span>
+          <button type="button" class="pixel-label-sm" style="background: var(--paper); border: 1px solid var(--ink); padding: 3px 6px; cursor: pointer;" data-open-modal="nokia3310" onclick="event.stopPropagation(); openSpecimenModal('nokia3310')">[INSPECT REGISTER]</button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- 4. MODAL DOSSIER INSPECTOR COMPONENT -->
+    <aside id="accession-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-window">
+        <!-- Top Bar -->
+        <div class="modal-top-bar">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="width: 8px; height: 8px; background-color: var(--signal); display: inline-block;"></span>
+            <span class="pixel-label-sm">[ACCESSION DOSSIER // DECLASSIFIED ARCHIVE RECORD]</span>
+          </div>
+          <button type="button" id="close-modal-btn" class="btn-pixel btn-shade" style="padding: 4px 10px;" aria-label="Close modal dialog">
+            <span>CLOSE [ESC] ×</span>
+          </button>
+        </div>
+
+        <!-- Modal Body Content -->
+        <div style="padding: 24px; display: grid; grid-template-columns: 1fr; gap: 24px; max-height: 80vh; overflow-y: auto;">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                <span id="modal-specimen-badge" class="pixel-label-sm" style="background: var(--signal); color: #fff; padding: 2px 6px;">SPECIMEN #04</span>
+                <span class="pixel-label-sm" style="color: #635E4E;">CLASS 1 TANGIBLE ARTIFACT</span>
+              </div>
+              <h2 id="modal-title" style="font-size: 32px; line-height: 1.1;">COMMODORE 64 (1982) // SPECIMEN RTM-1982-012</h2>
+            </div>
+
+            <!-- Archival Photographic Inspection Plate -->
+            <div class="modal-photo-plate">
+              <div class="flex-between" style="border-bottom: 1px solid var(--ink); padding-bottom: 4px; margin-bottom: 8px;">
+                <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold;">[MUSEUM CONSERVATION PHOTOGRAPHIC RECORD]</span>
+                <span id="modal-photo-source" class="pixel-label-sm" style="color: #635E4E;">SOURCE: Wikimedia Commons (Evan-Amos VOGM Archive)</span>
+              </div>
+              <div class="modal-photo-frame-inner">
+                <img id="modal-specimen-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Commodore-64-Computer-FL.jpg" alt="Commodore 64 breadbin microcomputer with mechanical keyboard" />
+              </div>
+              <div style="border-top: 1px solid var(--ink); padding-top: 4px; margin-top: 4px;">
+                <span id="modal-photo-caption" class="mono-data" style="font-size: 11px; color: #635E4E; display: block;">Commodore 64 breadbin microcomputer with mechanical keyboard</span>
+              </div>
+            </div>
+
+
+            <!-- Verified Physical & Electrical Specs Table -->
+            <div>
+              <span class="pixel-label-sm" style="color: #635E4E; display: block; margin-bottom: 6px;">VERIFIED PHYSICAL & ELECTRICAL SPECIFICATIONS</span>
+              <table style="width: 100%; border-collapse: collapse; border: var(--border-thin); background: var(--paper);">
+                <tbody id="modal-specs-table">
+                  <!-- Populated dynamically via JS -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Curatorial Analysis: Why It Mattered -->
+            <div style="background-color: var(--shade); border: var(--border-thin); padding: 16px;">
+              <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold; display: block; margin-bottom: 4px;">■ CURATORIAL ANALYSIS: WHY IT MATTERED</span>
+              <p id="modal-why-mattered" style="font-size: 21px; line-height: 1.35; color: var(--ink);">
+                <!-- Populated dynamically via JS -->
+              </p>
+            </div>
+
+            <!-- Did You Know Historical Fact -->
+            <div style="border-left: 4px solid var(--signal); background: var(--paper); border-top: var(--border-thin); border-right: var(--border-thin); border-bottom: var(--border-thin); padding: 12px 16px;">
+              <span class="pixel-label-sm" style="color: var(--signal); font-weight: bold; display: block; margin-bottom: 2px;">HISTORICAL ANNOTATION // GUINNESS WORLD RECORD</span>
+              <p id="modal-annotation" style="font-size: 20px; font-style: italic; color: var(--ink);">
+                <!-- Populated dynamically via JS -->
+              </p>
+            </div>
+          </div>
+
+          <!-- Modal Footer Pagination & Navigation -->
+          <div class="flex-between" style="border-top: var(--border-thin); padding-top: 16px; flex-wrap: wrap; gap: 8px;">
+            <button type="button" class="btn-pixel btn-shade" id="modal-btn-prev">&lt; PREVIOUS OBJECT</button>
+            <span class="pixel-label-sm" id="modal-pagination-label" style="color: #635E4E;">SPECIMEN 04 OF 09</span>
+            <button type="button" class="btn-pixel btn-shade" id="modal-btn-next">NEXT OBJECT &gt;</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- REUSABLE ARCHIVAL FOOTER (SHARED COMPONENT) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-hours-block">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 8px; height: 8px; background-color: var(--ink); display: inline-block;"></span>
+          <span class="pixel-label-md">OPERATING PROTOCOL</span>
+        </div>
+        <p class="mono-data" style="margin-top: 4px; font-weight: bold;">
+          TUE-SUN 10:00-18:00 // CLOSED ON MONDAYS FOR DEGAUSSING
+        </p>
+      </div>
+
+      <div class="footer-stamp">
+        <span class="pixel-label-sm" style="color: #635E4E; display: block;">CATALOGUE SEAL</span>
+        <span class="pixel-label-md" style="font-weight: bold;">ACCESSION: RTM-2025-ARCHIVE</span>
+      </div>
+
+      <div>
+        <p class="footer-quote">
+          "Please do not press the buttons. Please press the buttons."
+        </p>
+        <span class="pixel-label-sm" style="color: #635E4E; display: block; text-align: right; margin-top: 4px;">
+          CONSERVATION DISCIPLINE // LEVEL 0 CRITICAL
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MASTER SCRIPT -->
+  <script src="main.js" defer></script>
+</body>
+</html>
